@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<div>
+  <!-- Markup -->
+  <div id="chart"></div>
+  <script>
+    var chart = bb.generate({
+      bindto: "#chart",
+      data: {
+        type: "bar",
+        columns: [
+          ["data1", 30, 200, 100, 170, 150, 250],
+          ["data2", 130, 100, 140, 35, 110, 50]
+        ]
+      }
+    });
+  </script>
+</div>
