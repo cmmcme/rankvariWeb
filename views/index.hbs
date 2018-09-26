@@ -8,12 +8,32 @@
     var chart = bb.generate({
       bindto: "#chart",
       data: {
+        x: "x",
         type: "bar",
-        columns: [
-          ["data1", 30, 200, 100, 170, 150, 250],
-          ["data2", 130, 100, 140, 35, 110, 50]
-        ]
-      }
+        columns: [[
+          'x',
+          {{#each x}}
+            '{{value}}'
+            {{#unless @last}},{{/unless}}
+          {{/each}}
+        ],
+         [   'count',
+          {{#each pv}}
+            {{value}}
+            {{#unless @last}},{{/unless}}
+          {{/each}}
+        ]]
+      },
+      axis: {
+        x: {
+          type: "category",
+          tick: {
+            multiline: false,
+            tooltip: true
+          },
+          height: 130
+        }
+      },
     });
   </script>
 </div>
